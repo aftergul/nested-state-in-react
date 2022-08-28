@@ -6,6 +6,7 @@ import _ from "lodash";
 import NewCarePlanCustomAccordion from "./NewCarePlanCustomAccordion";
 import useStyles from "./styles";
 
+const Delimeter='|';
 const Tab = ({ isSelected, children }) => (isSelected ? <>{children}</> : null);
 
 const CustomTab = () => {
@@ -21,8 +22,8 @@ const CustomTab = () => {
 
 const handleSelection = (data) => {
     // logic goes here
-  console.log(data);
-  const ids=data.split(':');  
+  console.log(data); //sectionId|questionId|itemId
+  const ids=data.split(Delimeter);  
   
   const sectionIndex=carePlanDetailsInfo.workflowBody.sections.findIndex((x)=>x.id===ids[0]);  
   const questionIndex=carePlanDetailsInfo.workflowBody.sections[sectionIndex].questions.findIndex((x)=>x.id===ids[1]);   
