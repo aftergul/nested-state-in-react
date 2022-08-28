@@ -2,7 +2,7 @@ import { Card, makeStyles } from "@material-ui/core";
 
 import CheckIcon from "../assets/check.svg";
 import React from "react";
-
+const Delimeter='|';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -44,7 +44,7 @@ handleSelection
         background: selected ? "#219653" : "#CFD8DC",
         justifyContent: selected ? "center" : "center"
       }}
-      onClick={() => handleSelection(sectionId+":"+questionId+":"+itemId)}
+      onClick={() => handleSelection(sectionId+Delimeter+questionId+Delimeter+itemId)}
     >
       {selected && (
         <img src={CheckIcon} alt="check mark" className={classes.icon} />
